@@ -60,10 +60,9 @@ public:
 		delete[] data;
 	}
 
-	matrix_t add(matrix_t & other) 
+	matrix_t add(const matrix_t & other) const
 	{
 		matrix_t result(rows, columns);
-		result.data = new int *[rows];
 		for (unsigned int i = 0; i < rows; ++i) 
 		{
 			result.data[i] = new int[columns];
@@ -73,10 +72,9 @@ public:
 		return result;
 	}
 
-	matrix_t sub(matrix_t & other) 
+	matrix_t sub(const matrix_t & other) const
 	{
 		matrix_t result(rows, columns);
-		result.data = new int *[rows];
 		for (unsigned int i = 0; i < rows; ++i) 
 		{
 			result.data[i] = new int[columns];
@@ -86,10 +84,9 @@ public:
 		return result;
 	}
 
-	matrix_t mul(matrix_t & other) 
+	matrix_t mul(const matrix_t & other) const
 	{
 		matrix_t result(rows, other.columns);
-		result.data = new int *[rows];
 		for (unsigned int i = 0; i < rows; ++i) 
 		{
 			result.data[i] = new int[columns];
@@ -103,10 +100,9 @@ public:
 		return result;
 	}
 
-	matrix_t trans() 
+	matrix_t trans() const
 	{
 		matrix_t result(columns, rows);
-		result.data = new int *[columns];
 		for (unsigned int i = 0; i < columns; ++i) 
 		{
 			result.data[i] = new int[rows];
